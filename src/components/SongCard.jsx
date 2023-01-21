@@ -22,7 +22,7 @@ const SongCard = ({
       <div className="relative w-full h-56 group">
         <div
           className={`absolute inset-0 bg-black bg-opacity-50 justify-center items-center group-hover:flex ${
-            activeSong?.title === song.title
+            activeSong?.key === song.key
               ? "flex bg-black bg-opacity-70"
               : "hidden"
           }`}

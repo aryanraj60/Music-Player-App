@@ -7,7 +7,10 @@ const PlayPause = ({
   handlePause,
   handlePlay,
 }) => {
-  if (isPlaying && activeSong?.title === song.title) {
+  console.log("Play Pause");
+  console.log("Song OBJ", song);
+  console.log("Active Song", activeSong);
+  if (isPlaying && activeSong?.key === song.key) {
     return (
       <FaPauseCircle
         size={35}

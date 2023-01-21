@@ -45,12 +45,13 @@ const Search = () => {
     );
   }
 
+  console.log("Page Data", data);
   return (
     <div className="flex flex-col">
       <div className="w-full flex flex-col justify-between items-center sm:flex-row mt-4 mb-10">
         <h2 className="font-bold text-3xl text-white uppercase">
           Results for Song{" "}
-          <span className="text-blue-900 uppercase px-2">{searchTerm}</span>
+          <span className="text-rose-500 uppercase px-2">{searchTerm}</span>
         </h2>
       </div>
 

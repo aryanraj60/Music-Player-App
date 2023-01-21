@@ -13,6 +13,7 @@ export const PlayerContext = createContext();
 
 export const PlayerProvider = ({ children }) => {
   const [state, setState] = useState(initialState);
+  const [appStatus, setAppStatus] = useState("ideal");
 
   const setActiveSong = (song, i, data) => {
     let currentSongs;
@@ -76,6 +77,10 @@ export const PlayerProvider = ({ children }) => {
     }));
   };
 
+  console.log("Player Context Rendered!");
+  console.log("Current Songs", state.currentSongs);
+  console.log("Current Index", state.currentIndex);
+  console.log("Active Song", state.activeSong);
   return (
     <PlayerContext.Provider
       value={{
