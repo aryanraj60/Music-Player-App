@@ -17,6 +17,7 @@ const Discover = () => {
     });
   }, []);
 
+  console.log("Discover Rendered!", data);
   if (!data) {
     return (
       <div className="flex items-center justify-center w-full h-full rounded-lg">
