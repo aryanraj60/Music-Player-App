@@ -33,18 +33,12 @@ const MusicPlayer = () => {
   const handleNextSong = () => {
     playPause(false);
 
-    if (!shuffle) {
-      nextSong((currentIndex + 1) % currentSongs.length);
-    } else {
-      nextSong(Math.floor(Math.random() * currentSongs.length));
-    }
+    nextSong(Math.floor(Math.random() * currentSongs.length));
   };
 
   const handlePrevSong = () => {
     if (currentIndex === 0) {
       prevSong(currentSongs.length - 1);
-    } else if (shuffle) {
-      prevSong(Math.floor(Math.random() * currentSongs.length));
     } else {
       prevSong(currentIndex - 1);
     }
