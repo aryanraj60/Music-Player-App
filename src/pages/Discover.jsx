@@ -2,6 +2,7 @@ import React, { useEffect, useState, useContext } from "react";
 import { SongCard } from "../components";
 import { fetchFromAPI } from "../utils/fetchFromApi";
 import { PlayerContext } from "../context/PlayerContext";
+import { useNavigate } from "react-router-dom";
 
 const Discover = () => {
   const {
@@ -11,8 +12,10 @@ const Discover = () => {
   } = useContext(PlayerContext);
   const [data, setData] = useState();
 
+  const navigate = useNavigate();
+
   useEffect(() => {
-    fetchFromAPI("charts/track?listId=ip-country-chart-IN").then((data) => {
+    fetchFromAPI(`search?term=karanaujla`).then((data) => {
       setData(data);
     });
   }, []);
@@ -51,10 +54,10 @@ const Discover = () => {
       </div>
 
       <div className="flex flex-wrap justify-center sm:justify-start gap-8">
-        {data.tracks.map((track, index) => (
+        {data.tracks.hits.map((item, index) => (
           <SongCard
-            key={track.key}
-            song={track}
+            key={item.track.key}
+            song={item.track}
             isPlaying={isPlaying}
             activeSong={activeSong}
             i={index}
